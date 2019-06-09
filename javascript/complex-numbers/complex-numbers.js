@@ -30,14 +30,11 @@ export class ComplexNumber {
   }
 
   mul(b) {
-    // const x = `(a + i * b) * (c + i * d) = (a * c - b * d) + (b * c + a * d) * i`
     const { real, imag } = this;
     return new ComplexNumber(real * b.real - imag * b.imag, imag * b.real + real * b.imag);
   }
 
   div(b) {
-    const x = `(a + i * b) / (c + i * d) = 
-       (a * c + b * d)/(c^2 + d^2) + (b * c - a * d)/(c^2 + d^2) * i`
     const { real, imag } = this;
     return new ComplexNumber(
       (real * b.real + imag * b.imag) / (b.real ** 2 + b.imag ** 2),
